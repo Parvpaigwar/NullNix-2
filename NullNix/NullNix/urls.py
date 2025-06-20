@@ -16,8 +16,16 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.http import JsonResponse
+
+
+def home(request):
+    return JsonResponse({"message": "NullNix Backend is running."})
 
 urlpatterns = [
+    path('', home),
     path("admin/", admin.site.urls),
+    path("api/users/", include("users.urls")),  # ✅ users app URLs
 ]
+
