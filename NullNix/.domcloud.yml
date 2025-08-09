@@ -1,2 +1,22 @@
-run:
-  web: gunicorn nullnix.wsgi
+# run:
+#   web: gunicorn nullnix.wsgi
+
+
+features:
+  - python
+  - postgresql
+
+root: NullNix-2/NullNix
+
+nginx:
+  passenger:
+    enabled: on
+    app_type: wsgi
+    startup_file: passenger_wsgi.py
+    python: .pyenv/shims/python
+    app_env: production
+
+commands:
+  - pip install -r requirements.txt
+  - python manage.py migrate
+  - python manage.py collectstatic --norevert --no-input
