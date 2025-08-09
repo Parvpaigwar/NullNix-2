@@ -67,7 +67,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "nullnix.urls"
+ROOT_URLCONF = "NullNix.urls"
 
 TEMPLATES = [
     {

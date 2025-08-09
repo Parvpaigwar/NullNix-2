@@ -11,6 +11,9 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "nullnix.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "NullNix.settings")
 
 application = get_wsgi_application()
+
+# Isko change karo:
+
